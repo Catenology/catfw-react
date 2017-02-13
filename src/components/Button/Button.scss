@@ -1,0 +1,76 @@
+ // ./components/Button/Button.scss
+@mixin button($color-bg, $color-fg) {
+  background-color: $color-bg;
+  border-color: $color-bg;
+  color: $color-fg;
+  outline: none;
+  @include transition(all ease .3s);
+  &:hover {
+    background-color: darken($color-bg, 10%);
+    border-color: darken($color-bg, 20%);
+  }
+  &:active,
+  &.active {
+    background-color: darken($color-bg, 15%);
+  }
+  &.inverse {
+    background-color: transparent;
+    border-color: $color-bg;
+    color: $color-bg;
+    &:hover {
+      background-color: darken($color-bg, 10%);
+      border-color: darken($color-bg, 20%);
+      color: $color-fg;
+    }
+    &:active,
+    &.active {
+      background-color: $color-bg;
+      color: $color-fg;
+    }
+  }
+}
+
+.btn {
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  background-image: none;
+  outline: 0;
+  border: .2em solid transparent;
+  padding: .5em 2em;
+  text-transform: uppercase;
+  font-weight: 600;
+  @include transition(ease, .3s);
+  &.fw {
+    width: 12em;
+  }
+  &.sm {
+    font-size: $font-size-sm;
+  }
+  &.md {
+    font-size: $font-size-md;
+  }
+  &.lg {
+    font-size: $font-size-lg;
+  }
+}
+
+.btn-default {
+  @include button($color-grey, $color-white);
+}
+
+.btn-success {
+  @include button($color-success, $color-white);
+}
+
+.btn-danger {
+  @include button($color-danger, $color-white);
+}
+
+.btn-info {
+  @include button($color-info, $color-white);
+}
+
+.btn-warning {
+  @include button($color-warning, $color-black);
+}

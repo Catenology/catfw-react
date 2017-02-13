@@ -35,3 +35,10 @@ jspm_packages
 
 # Optional REPL history
 .node_repl_history
+
+# build result
+dist
+
+# jekyll
+_site
+.sass-cache
